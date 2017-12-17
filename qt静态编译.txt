@@ -1,0 +1,10 @@
+qt5.7.1:
+configure -confirm-license -opensource -platform win32-msvc2015 -release -static -prefix "D:\msvc2015_static" -qt-sql-sqlite -qt-sql-odbc -plugin-sql-sqlite -plugin-sql-odbc -qt-zlib -qt-libpng -qt-libjpeg -opengl desktop -qt-freetype -no-qml-debug -no-angle -nomake tests -nomake examples
+
+qt5.8:
+configure -confirm-license -opensource -platform win32-msvc2015 -release -static -prefix "D:\msvc2015_static" -qt-sqlite  -qt-zlib -qt-libpng -qt-libjpeg -opengl desktop -qt-freetype -qml-debug -no-angle -nomake tests -nomake examples
+
+configure -confirm-license -opensource -platform win32-msvc2015 -release -static -prefix "D:\msvc2015_static" -qt-sqlite -qt-pcre -qt-zlib -qt-libpng -qt-libjpeg -opengl desktop -qt-freetype -qml-debug -no-angle -nomake tests -nomake examples
+
+qt5.9:
+configure -confirm-license -opensource -platform win32-msvc2015 -release -static -static-runtime -prefix "D:\msvc2015_static" -qt-sqlite -qt-pcre -qt-zlib -qt-libpng -qt-libjpeg -opengl desktop -qt-freetype -nomake tests -no-compile-examples -nomake examples

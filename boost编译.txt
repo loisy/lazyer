@@ -1,0 +1,20 @@
+bjam stage --toolset=msvc-14.0 --stagedir="D:\iCode\boost" link=static runtime-link=static threading=multi debug release
+bjam stage --toolset=msvc-14.0 --stagedir="D:\iCode\boost" link=shared runtime-link=shared threading=multi debug release
+
+bjam stage --toolset=msvc-14.0 --stagedir="D:\iCode\boost" link=shared runtime-link=shared threading=multi debug release
+bjam stage --toolset=msvc-14.0 --stagedir="D:\iCode\boost" link=static runtime-link=static threading=multi debug release
+
+bjam --toolset=msvc-14.0 --stagedir=F:\code\sandbox\tmp\ --with-log  link=static  threading=multi  variant=release  runtime-link=static  stage
+
+cd ..\..\third_party\boost_1_57_0
+if not exist .\b2.exe (
+    call .\bootstrap.bat
+    .\b2.exe -j5 --toolset=msvc-12.0 --stagedir="D:\iCode\boost"  --with-date_time --with-filesystem --with-system --with-thread --with-regex link=static runtime-link=static
+)
+
+
+cd ..\..\third_party\boost_1_57_0
+if not exist .\b2.exe (
+    call .\bootstrap.bat
+    .\b2.exe -j5 --with-date_time --with-filesystem --with-system --with-thread --with-regex link=static runtime-link=static
+)
