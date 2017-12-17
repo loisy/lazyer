@@ -1,0 +1,62 @@
+20160629------------------------------
+1,启用客户信息查询ReqQryInvestor需要后台60622之后的版本做支持
+2,持仓明细查询,上期所分昨仓和今仓
+3,结算结果信息确认查询,有响应,永远为已确认.
+4,错误码整理,参见APIErrorCode.h和APIErrorCode.xml
+5,修正ReqQryInstrumentMarginRate()
+	OnRspQryInstrumentMarginRate()
+	ReqQryInstrumentCommissionRate()
+	OnRspQryInstrumentCommissionRate()
+	原为查询之后返回模板,现返回合约的具体费率和保证金率
+	注:请求时,资金账号必填
+6,增加合约行情订阅应答,和撤销订阅应答.
+7,持仓查询中,持仓方向错误修正..
+
+20160630------------------------------------
+sgitTradeapi_4.2.12.60630
+1,OnRspOrderInsert中,订单域字段ExchangID修正,
+	原为<字符宏定义,如黄金交易所"7">,现在修改为<字符串,如黄金交易所"SGE">
+2,数据流传送方式Restart/Quick/ReSume问题修正,
+	注:后台pg_4.2.15.60630以及之后的版本可用,之前的版本只有Restart模式.
+	
+20160712------------------------------------
+sgitTradeapi_4.2.13.60712
+1,OnRspQryInstrument()合约信息域中CThostFtdcInstrumentField::ProductID启用
+只需更新api即可
+
+20160715------------------------------------
+sgitTradeapi_4.2.14.60715
+持仓明细修正,ExchangMargin统一为交易所保证金,PreSettlePrice启用.
+
+20160718------------------------------------
+SgitQuotApi_4.2.4.60718
+1,行情api日志文件名称改为QuotAPIPackage.txt
+2,行情中OnRtnDepthMarketData:: CThostFtdcDepthMarketDataField:: UpdateMillisec修正.
+原 : 为大商所成交变化量,其他交易所为0
+现 : 上期所和中金所有效,其他交易所为0
+注:行情接口sgitQuotApi_4.2.4.60718 ,行情后台qg4.2.6_20160718及之后版本有效 
+
+20160726------------------------------------
+sgitApi4.2.15.60726
+1,合约查询修正
+2,保证金查询修正
+3,增加系统参数查询
+注:交易后台pg4.2.19-20160726之后版本有效
+4,增加函数
+	virtual int InitLog(TThostFtdcBoolType bLog=TRUE) = 0;
+	virtual int IsReviveNtyCapital(TThostFtdcBoolType bRecive=TRUE) = 0;
+20160817--------------------------------------
+sgitApi4.2.17.60817
+1,持仓明细插叙修正.
+
+20160907--------------------------------------
+sgitquotapi4.2.7.60907
+1,递延交割行情接收修正.
+SgitFtdcTraderApi.h
+virtual int InitLog(TThostFtdcBoolType bLog=TRUE) = 0;
+修改为
+virtual int InitLog(TThostFtdcBoolType bLog=TRUE) = 0;
+
+virtual int IsReviveNtyCapital(TThostFtdcBoolType bRecive=1) = 0;
+修改为
+virtual int IsReviveNtyCapital(TThostFtdcBoolType bRecive=1) = 0;
